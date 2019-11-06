@@ -1,0 +1,77 @@
+APPLICATION_ROOT=${APPLICATION_ROOT:-"$(dirname $0)/.."};
+DOT_ENV_FILE=${DOT_ENV_FILE:-"$APPLICATION_ROOT/.env"};
+DOT_ENV_LOCAL_FILE=${DOT_ENV_LOCAL_FILE:-"$APPLICATION_ROOT/.env.local"};
+TMP_DIR=${TMP_DIR:-"$APPLICATION_ROOT/tmp"};
+VENV_DIR=${VENV_DIR:-"$APPLICATION_ROOT/.venv"};
+
+
+_activate_venv () {
+  export LANG="en_US.UTF-8" LC_ALL="en_US.UTF-8";
+  source "$VENV_DIR/bin/activate";
+}
+
+_create_venv () {
+  if [ ! -e "$VENV_DIR" ]; then
+    python -m venv $VENV_DIR;
+  fi
+}
+
+_deactivate_venv () {
+  if [ -n "$VIRTUAL_ENV" ]; then
+    deactivate > /dev/null 2>&1 || true;
+    unset \
+      LANG \
+      LC_ALL \
+      VIRTUAL_ENV;
+  fi
+}
+
+_install_dependencies () {
+  install_dependencies_lockfile=$TMP_DIR/install_dependencies.lock;
+  if [ -e "$install_dependencies_lockfile" ] && [ "$FORCE" != "true" ]; then
+    return;
+  fi
+
+  pip install --upgrade pip setuptools;
+
+  requirements_first_file="$APPLICATION_ROOT/requirements-first.txt";
+  if [ -e "$requirements_first_file" ]; then
+    pip install --requirement "$requirements_first_file";
+  fi
+
+  pip install \
+    --global-option=build_ext \
+    --global-option="-I/usr/local/opt/openssl/include" \
+    --global-option="-L/usr/local/opt/openssl/lib" \
+    --requirement "$APPLICATION_ROOT/requirements.txt";
+
+  requirements_dev_file="$APPLICATION_ROOT/requirements-dev.txt";
+  if [ -e "$requirements_dev_file" ]; then
+    pip install --requirement "$requirements_dev_file";
+  fi
+
+  requirements_last_file="$APPLICATION_ROOT/requirements-last.txt";
+  if [ -e "$requirements_last_file" ]; then
+    pip install --requirement "$requirements_last_file";
+  fi
+
+  touch $install_dependencies_lockfile;
+}
+
+_load_env_files () {
+  if [ -e "$DOT_ENV_FILE" ]; then
+    source $DOT_ENV_FILE;
+  fi
+
+  if [ -e "$DOT_ENV_LOCAL_FILE" ]; then
+    source $DOT_ENV_LOCAL_FILE;
+  fi
+}
+
+_remove_lockfiles () {
+  rm -rf $TMP_DIR/*.lock;
+}
+
+_remove_venv () {
+  rm -rf $VENV_DIR;
+}

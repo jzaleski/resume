@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -e;
+
+source $(dirname $0)/../helpers/with-venv;
+
+_activate_venv;
+_load_env_files;
+
+FLASK_DEBUG=${FLASK_DEBUG:-"true"} SHOW_SQL=${SHOW_SQL:-"true"} \
+  python "$(dirname "$0")/../wsgi.py";
