@@ -1,11 +1,27 @@
 #!/usr/bin/env bash
 
-set -e;
+go_cmd=$(which go 2> /dev/null || echo -n);
+if [ -z "$go_cmd" ]; then
+  echo "Could not locate the \"go\" binary";
+  exit 1;
+fi
 
-source $(dirname $0)/../helpers/with-venv;
+go_path=$($go_cmd env GOPATH);
+if [ -z "$go_path" ]; then
+  echo "Could not determine \`\$GOPATH\`";
+  exit 1;
+fi
 
-_activate_venv;
-_load_env_files;
+air_cmd=$go_path/bin/air;
+if [ ! -e "$air_cmd" ]; then
+  echo "Could not locate the \"air\" binary";
+  exit 1;
+fi
 
-FLASK_DEBUG=${FLASK_DEBUG:-"true"} SHOW_SQL=${SHOW_SQL:-"true"} \
-  python "$(dirname "$0")/../wsgi.py";
+air_conf=$(dirname $0)/../.air.conf;
+if [ ! -e "$air_conf" ]; then
+  echo "Could not locate the \"air\" configuration file";
+  exit 1;
+fi
+
+$air_cmd -c $air_conf;
