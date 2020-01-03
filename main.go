@@ -41,6 +41,8 @@ func bindAddress() string {
 }
 
 
+/* Handler(s) */
+
 func indexHandler(context *gin.Context) {
   context.HTML(
     http.StatusOK,
