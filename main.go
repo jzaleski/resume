@@ -54,7 +54,7 @@ func indexHandler(context *gin.Context) {
 
 func main() {
   router := gin.New()
-  router.LoadHTMLGlob("templates/*.html")
+  router.LoadHTMLGlob("index.html")
   router.Use(gin.Logger(), gin.Recovery())
   router.GET("/", indexHandler)
   router.Run(bindAddress())
