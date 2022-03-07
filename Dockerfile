@@ -15,6 +15,7 @@ RUN apk add ca-certificates
 
 WORKDIR /app
 
+COPY templates/index.html ./templates/index.html
 COPY --from=builder /app/resume ./bin/resume
 
 CMD ["/app/bin/resume"]
