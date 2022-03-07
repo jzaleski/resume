@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -e;
+
+# TODO: Implement me!
+
+$(dirname $0)/setup;

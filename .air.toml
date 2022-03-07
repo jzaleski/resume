@@ -1,13 +1,15 @@
 # Config file for [Air](https://github.com/cosmtrek/air) in TOML format
 root = "."
+bin_dir = "bin"
+build_dir = "build"
 log_dir = "log"
 tmp_dir = "tmp"
 
 [build]
 cmd = "go build -o build/resume"
 bin = "build/resume"
-include_ext = ["go", "html"]
-exclude_dir = ["build", "tmp"]
+include_ext = ["go"]
+exclude_dir = ["bin", "build", "log", "tmp"]
 include_dir = []
 exclude_file = []
 delay = 1000 # ms
