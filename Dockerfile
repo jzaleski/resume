@@ -1,4 +1,4 @@
-FROM golang:1.18.0-alpine3.15 AS builder
+FROM golang:1.19.4-alpine3.17 AS builder
 
 WORKDIR /app
 
@@ -9,7 +9,7 @@ RUN go mod download
 COPY main.go ./main.go
 RUN go build -o ./resume
 
-FROM alpine:3.15
+FROM alpine:3.17
 
 RUN apk add ca-certificates
 

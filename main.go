@@ -16,6 +16,10 @@ import (
 /* Helper(s) */
 
 func bindInterface() string {
+  result, found := os.LookupEnv("INTERFACE")
+  if found {
+    return result
+  }
   if gin.Mode() == gin.ReleaseMode {
     return "0.0.0.0"
   }
