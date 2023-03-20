@@ -152,10 +152,15 @@
 
     <script type="text/javascript">
       $(document).ready(function() {
-        if (window.location.hostname.startsWith('resume-full.')) {
+        $('.incomplete-js').hide();
+
+        var hostname = window.location.hostname;
+        if (hostname.startsWith('resume-full.')) {
           $('.lite-js').hide();
-        } else {
+        } else if (hostname.startsWith('resume-lite.')) {
           $('.full-js').hide();
+        } else {
+          $('.lite-js').hide();
         }
       });
     </script>
@@ -312,7 +317,7 @@
       <div class="medium_spacer">&nbsp;</div>
       <div class="tagline paragraph">A social media app that brings conversation to life over video, audio, images and text.</div>
       <div class="lite-js extra_extra_large_spacer">&nbsp;</div>
-      <ul class="full-js">
+      <ul class="full-js incomplete-js">
         <li class="factoid">Factoid #1</li>
         <li class="factoid">Factoid #2</li>
         <li class="factoid">Factoid #3</li>
@@ -325,7 +330,7 @@
       <div class="medium_spacer">&nbsp;</div>
       <div class="tagline paragraph">A social media app that brings conversation to life over video, audio, images and text.</div>
       <div class="lite-js extra_extra_large_spacer">&nbsp;</div>
-      <ul class="full-js">
+      <ul class="full-js incomplete-js">
         <li class="factoid">Factoid #1</li>
         <li class="factoid">Factoid #2</li>
         <li class="factoid">Factoid #3</li>
@@ -360,7 +365,7 @@
       <div class="medium_spacer">&nbsp;</div>
       <div class="tagline paragraph">A NYC-based Product Engineering Firm</div>
       <div class="lite-js extra_extra_large_spacer">&nbsp;</div>
-      <ul class="full-js">
+      <ul class="full-js incomplete-js">
         <li class="factoid">Factoid #1</li>
         <li class="factoid">Factoid #2</li>
         <li class="factoid">Factoid #3</li>
@@ -373,7 +378,7 @@
       <div class="medium_spacer">&nbsp;</div>
       <div class="tagline paragraph">Worldwide leader in crowdtesting and digital quality.</div>
       <div class="lite-js extra_extra_large_spacer">&nbsp;</div>
-      <ul class="full-js">
+      <ul class="full-js incomplete-js">
         <li class="factoid">Factoid #1</li>
         <li class="factoid">Factoid #2</li>
         <li class="factoid">Factoid #3</li>
