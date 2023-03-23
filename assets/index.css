@@ -1,0 +1,137 @@
+a, a:hover {
+  color: #6161FF;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+body {
+  color: #000;
+  font-family: Tahoma, Arial, Verdana;
+  margin: 0em;
+  padding: 0em;
+}
+
+.company,
+.dates,
+.factoid,
+.factoid_section_label,
+.name,
+.paragraph,
+.project,
+.qualification_bucket,
+.qualifying_skills,
+.subfactoid,
+.tertiary_factoid,
+.tagline,
+.title {
+  font-size: .75em;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.contact_information, .name {
+  color: #FFF;
+  padding: .1em 0em;
+}
+
+.contact_information {
+  font-size: .80em;
+}
+
+.extra_extra_large_spacer,
+.extra_large_spacer,
+.extra_small_spacer,
+.large_spacer,
+.medium_spacer,
+.small_spacer,
+.tiny_spacer {
+  font-size: .10em;
+}
+
+.extra_extra_large_spacer {
+  height: 4.25em;
+}
+
+.extra_large_spacer {
+  height: 2.75em;
+}
+
+.extra_small_spacer {
+  height: .25em;
+}
+
+.factoid {
+  margin-left: -1.25em;
+}
+
+.factoid,
+.subfactoid,
+.tertiary_factoid {
+  margin-top: .40em;
+}
+
+.factoid_section_label {
+  margin-left: .25em;
+  margin-top: 1em;
+}
+
+.header {
+  background-color: #000;
+  text-align: center;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.large_spacer {
+  height: 1.5em;
+}
+
+.medium_spacer {
+  height: 1.0em;
+}
+
+.name {
+  font-size: 1.0em;
+}
+
+.normal {
+  font-weight: normal;
+}
+
+.qualification_bucket {
+  color: #666;
+}
+
+.small_spacer {
+  height: .50em;
+}
+
+.subsection {
+  margin: .75em .5em 0 .5em;
+}
+
+.subsection_heading {
+  font-size: 1.0em;
+}
+
+.tertiary_factoid {
+  margin-left: 1.25em;
+}
+
+.tiny_spacer {
+  height: .05em;
+}
+
+.underline {
+  text-decoration: underline;
+}

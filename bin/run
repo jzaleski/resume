@@ -44,6 +44,8 @@ if [ -e "$dot_env_dot_local_file" ]; then
 fi
 
 ${chokidar_cmd} \
+  "assets/*.css" \
+  "assets/*.js" \
   "templates/*.html" \
   "**/*.go" \
   --initial \

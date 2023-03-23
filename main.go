@@ -9,32 +9,25 @@ import (
   "fmt"
   "net/http"
   "os"
+  "strings"
   "github.com/gin-gonic/gin"
 )
+
+
+/* Variable(s) */
+
+var ROUTER *gin.Engine
 
 
 /* Helper(s) */
 
 func bindInterface() string {
-  result, found := os.LookupEnv("INTERFACE")
-  if found {
-    return result
-  }
-  if gin.Mode() == gin.ReleaseMode {
-    return "0.0.0.0"
-  }
-  return "127.0.0.1"
+  return envValueOrDefault("INTERFACE", "127.0.0.1")
 }
-
 
 func bindPort() string {
-  result, found := os.LookupEnv("PORT")
-  if found {
-    return result
-  }
-  return "5000"
+  return envValueOrDefault("PORT", "5001")
 }
-
 
 func bindAddress() string {
   return fmt.Sprintf(
@@ -44,11 +37,37 @@ func bindAddress() string {
   )
 }
 
+func debug() bool {
+  return envValueOrDefault("DEBUG", "true") == "true"
+}
+
+func envValueOrDefault(key string, defaultValue string) string {
+  value := os.Getenv(key)
+  if value == "" {
+    return defaultValue
+  }
+  return value
+}
+
+func ginMode() string {
+  if debug() {
+    return gin.DebugMode
+  }
+  return gin.ReleaseMode
+}
+
+func trustedProxies() []string {
+  trustedProxies := envValueOrDefault("TRUSTED_PROXIES", "")
+  if trustedProxies == "" {
+    return nil
+  }
+  return strings.Split(trustedProxies, ",")
+}
 
 /* Handler(s) */
 
-func indexHandler(context *gin.Context) {
-  context.HTML(
+func indexHandler(ginContext *gin.Context) {
+  ginContext.HTML(
     http.StatusOK,
     "index.html",
     nil,
@@ -56,12 +75,25 @@ func indexHandler(context *gin.Context) {
 }
 
 
+/* Application initializer */
+
+func init() {
+  gin.SetMode(ginMode())
+
+  router := gin.New()
+  router.SetTrustedProxies(trustedProxies())
+  router.LoadHTMLGlob("templates/*.html")
+  router.Use(gin.Logger(), gin.Recovery())
+  router.GET("/", indexHandler)
+  router.StaticFile("/favicon.ico", "assets/favicon.ico")
+  router.Static("/assets", "assets")
+
+  ROUTER = router
+}
+
+
 /* Application entry-point */
 
 func main() {
-  router := gin.New()
-  router.LoadHTMLGlob("./templates/index.html")
-  router.Use(gin.Logger(), gin.Recovery())
-  router.GET("/", indexHandler)
-  router.Run(bindAddress())
+  ROUTER.Run(bindAddress())
 }
