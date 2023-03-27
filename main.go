@@ -66,6 +66,14 @@ func trustedProxies() []string {
 
 /* Handler(s) */
 
+func errorHandler(ginContext *gin.Context) {
+  ginContext.HTML(
+    http.StatusOK,
+    "error.html",
+    nil,
+  )
+}
+
 func indexHandler(ginContext *gin.Context) {
   ginContext.HTML(
     http.StatusOK,
@@ -85,6 +93,8 @@ func init() {
   router.LoadHTMLGlob("templates/*.html")
   router.Use(gin.Logger(), gin.Recovery())
   router.GET("/", indexHandler)
+  router.GET("/error.html", errorHandler)
+  router.GET("/index.html", indexHandler)
   router.StaticFile("/favicon.ico", "assets/favicon.ico")
   router.Static("/assets", "assets")
 
