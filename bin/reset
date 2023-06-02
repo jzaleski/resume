@@ -2,6 +2,8 @@
 
 set -e;
 
-# TODO: Implement me!
+cd $(dirname $0)/..;
 
-$(dirname $0)/setup;
+rm -rf node_modules;
+
+bin/setup;

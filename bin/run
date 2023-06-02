@@ -2,51 +2,6 @@
 
 set -e;
 
-chokidar_cmd=$(which chokidar || echo -n);
-if [ -z ${chokidar_cmd} ]; then
-  echo "Could not locate \"chokidar\" binary -- please install it via: \`npm install -g chokidar-cli\`";
-  exit 1;
-fi
+cd $(dirname $0)/..;
 
-go_cmd=$(which go || echo -n);
-if [ -z ${go_cmd} ]; then
-  echo "Could not locate \"go\" binary";
-  exit 1;
-fi
-
-grep_cmd=$(which grep || echo -n);
-if [ -z ${grep_cmd} ]; then
-  echo "Could not locate \"grep\" binary";
-  exit 1;
-fi
-
-kill_cmd=$(which kill || echo -n);
-if [ -z ${kill_cmd} ]; then
-  echo "Could not locate \"kill\" binary";
-  exit 1;
-fi
-
-lsof_cmd=$(which lsof || echo -n);
-if [ -z ${lsof_cmd} ]; then
-  echo "Could not locate \"lsof\" binary";
-  exit 1;
-fi
-
-xargs_cmd=$(which xargs || echo -n);
-if [ -z ${xargs_cmd} ]; then
-  echo "Could not locate \"xargs\" binary";
-  exit 1;
-fi
-
-dot_env_dot_local_file="$(dirname $0)/../.env.local";
-if [ -e "$dot_env_dot_local_file" ]; then
-  export $(${grep_cmd} -v "^#" ${dot_env_dot_local_file} | ${xargs_cmd});
-fi
-
-${chokidar_cmd} \
-  "assets/*.css" \
-  "assets/*.js" \
-  "templates/*.html" \
-  "**/*.go" \
-  --initial \
-  --command "${go_cmd} build -o build/resume && (${kill_cmd} \$(${lsof_cmd} -ti tcp:${PORT:-"5001"}) 2> /dev/null || true) && build/resume";
+node index.js;

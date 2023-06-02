@@ -1,12 +1,1 @@
-.DS_Store
-
-build/*
-!build/.keep
-
-log/*
-!log/.keep
-
-tmp/*
-!tmp/.keep
-
-.env.local
+node_modules

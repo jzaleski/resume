@@ -2,9 +2,6 @@
 
 set -e;
 
-dot_env_dot_local_file="$(dirname $0)/../.env.local";
-if [ ! -e "$dot_env_dot_local_file" ]; then
-  cp ${dot_env_dot_local_file}{.example,};
-fi
+cd $(dirname $0)/..;
 
-# TODO: Implement me!
+npm install;
