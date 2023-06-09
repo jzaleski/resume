@@ -3,8 +3,6 @@
 
 /* On document ready handler */
 $(document).ready(function() {
-  $('.incomplete-js').hide();
-
   var hostname = window.location.hostname;
   if (hostname.startsWith('resume-full.')) {
     $('.lite-js').hide();
