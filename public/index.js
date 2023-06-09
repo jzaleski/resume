@@ -10,6 +10,9 @@ $(document).ready(function() {
     $('.lite-js').hide();
   } else if (hostname.startsWith('resume-lite.')) {
     $('.full-js').hide();
+  } else if (hostname.startsWith('resume-recent.')) {
+    $('.job').filter(':not(.recent-js)').hide();
+    $('.job-footer').filter('.recent-js').show();
   } else {
     $('.lite-js').hide();
   }
