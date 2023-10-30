@@ -11,6 +11,7 @@ $(document).ready(function() {
   } else if (hostname.startsWith('resume-recent.')) {
     $('.job').filter(':not(.recent-js)').hide();
     $('.job-footer').filter('.recent-js').show();
+    $('.lite-js').hide();
   } else {
     $('.lite-js').hide();
   }
