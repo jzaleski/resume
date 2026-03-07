@@ -1,15 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 
 const ResumeContent = () => {
-  const getInitialMode = () => {
-    if (typeof document !== "undefined") {
-      return document.body.getAttribute("data-resume-mode") || "default";
-    }
-    return "default";
-  };
-  const [mode] = useState(getInitialMode);
+  const mode =
+    typeof document !== "undefined"
+      ? document.body.getAttribute("data-resume-mode") || "default"
+      : "default";
 
   const isLite = mode === "lite";
   const isRecent = mode === "recent";
@@ -45,7 +42,10 @@ const ResumeContent = () => {
       recent: true,
       bullets: [
         "Led both the Product and Engineering disciplines.",
-        "Launched the <i>ibble</i> mobile-application in both Mexico and Canada.",
+        <span key="ibble-launch">
+          Launched the <span className="italic">ibble</span> mobile-application in both Mexico and
+          Canada.
+        </span>,
         "Worked with Marketing to launch an updated App-Store and Website presence.",
         "Created multiple tools to automate or replace pre-existing manual processes, to aid in data-migrations / data-backfills and production flows.",
         "Continued focus on optimizing cost while maintaining or increasing stability and reliability of both the backend and frontend services / applications.",
@@ -277,7 +277,7 @@ const ResumeContent = () => {
             <span key="postmortem">
               <span className="underline">Post-mortems / Retrospectives:</span> At Wayfair we moved
               fast, at times probably too fast. As a result of our speed, issues / bugs were a
-              fairly regular occurence. On the surface level, this was fine but the learning
+              fairly regular occurrence. On the surface level, this was fine but the learning
               opportunity that retrospectives and post-mortems provide was missed / not part of the
               process. In addition to leading a number of these types of meetings for my team(s), I
               worked closely with business and engineering leadership to establish guidelines on how
@@ -290,7 +290,10 @@ const ResumeContent = () => {
           subs: [
             'Identified and worked with engineering leadership to introduce the concept of a "Transportation - Platform Team" focused on scalability, monitoring, tools as well as platform / framework evolution.',
             'Identified a need and short-coming of the current "Remote" development / testing environments and worked very closely with multiple infrastructure leads / engineers on defining / building a "Local" development solution / option. This solution is now used by approximately 50% of Wayfair Engineering and has been successfully proven as the platform of choice for all "Wayfair Labs" groups going forward.',
-            "Developed many re-usable components, in particular the <i>Transportation - Base Classes and Traits</i>",
+            <span key="transportation-components">
+              Developed many re-usable components, in particular the{" "}
+              <span className="italic">Transportation - Base Classes and Traits</span>
+            </span>,
           ],
         },
         "Became the go to person for many technical topics.",
@@ -644,7 +647,7 @@ const ResumeContent = () => {
     {
       name: "File Uploader",
       dates: "(2011)",
-      desc: "The initial prototype of a flash-free Javascript / HTML5 file uploader using Javascript / AJAX / jQuery/ PHP.",
+      desc: "The initial prototype of a flash-free Javascript / HTML5 file uploader using Javascript / AJAX / jQuery / PHP.",
     },
     {
       name: "GSAuctionPlace & TrueWack",

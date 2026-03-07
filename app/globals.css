@@ -143,3 +143,23 @@ ul {
 .underline {
   text-decoration: underline;
 }
+
+[data-resume-mode="lite"] .full-js {
+  display: none !important;
+}
+
+[data-resume-mode="full"] .lite-js {
+  display: none !important;
+}
+
+[data-resume-mode="recent"] .job:not(.recent-js) {
+  display: none !important;
+}
+
+[data-resume-mode="recent"] .job-footer.recent-js {
+  display: block !important;
+}
+
+[data-resume-mode="recent"] .lite-js {
+  display: none !important;
+}
