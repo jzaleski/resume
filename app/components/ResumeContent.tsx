@@ -836,6 +836,7 @@ const ResumeContent = () => {
 
         {isRecent && (
           <div className="job-footer recent-js" style={{ display: "none" }}>
+            <div className="extra_large_spacer">&nbsp;</div>
             <div className="paragraph italic">
               Additional Professional Experience(s) provided upon request
             </div>
