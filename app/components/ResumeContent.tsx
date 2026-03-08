@@ -12,12 +12,128 @@ const ResumeContent = () => {
   }, []);
 
   const isLite = mode === "lite";
-  const isRecent = mode === "recent";
 
-  const shouldHideJob = (jobHasRecentClass: boolean) => {
-    if (isRecent) return !jobHasRecentClass;
-    return false;
-  };
+  const skills = [
+    {
+      category: "Languages / Technologies",
+      items: [
+        "Angular / AngularJS",
+        "ASP.NET MVC",
+        "ASP / ASP.NET",
+        "C#",
+        "C",
+        "Celery",
+        "CSS",
+        "Django / DRF",
+        "Flask",
+        "Gin",
+        "Go",
+        "HTML",
+        "Java",
+        "Javascript",
+        "Kafka",
+        "NestJS",
+        "Next.js",
+        "Node.js",
+        "PHP",
+        "Perl",
+        "Python / Jython / IronPython",
+        "RabbitMQ",
+        "Rails",
+        "React",
+        "React Native",
+        "Ruby / JRuby / IronRuby",
+        "Sinatra",
+        "Spark",
+        "Storm",
+        "TypeScript",
+        "VB / VB.NET",
+      ],
+    },
+    {
+      category: "Databases / NoSQL / Search",
+      items: [
+        "Cassandra",
+        "Elasticsearch",
+        "HBase",
+        "Hive / Hadoop / HDFS",
+        "InfluxDB",
+        "MSSQL",
+        "Memcached",
+        "MySQL",
+        "Oracle",
+        "PostgreSQL",
+        "Redis",
+        "Solr",
+      ],
+    },
+    {
+      category: "Operating Systems",
+      items: ["Linux", "OSX", "Windows"],
+    },
+    {
+      category: "Development Tools",
+      items: [
+        "Eclipse",
+        "Microsoft InterDev / Visual Studio / Visual Studio Code",
+        "NetBeans",
+        "awk",
+        "grep",
+        "i3",
+        "screen",
+        "sed",
+        "tmux",
+        "vim",
+        "xmonad",
+      ],
+    },
+    {
+      category: "Source Control",
+      items: ["CVS", "Git / GitHub / GitLab / BitBucket", "Microsoft Source Safe", "Subversion"],
+    },
+    {
+      category: "Other",
+      items: [
+        "Agile Development",
+        "Algolia",
+        "Amazon Web Services (AWS)",
+        "Auth0",
+        "Azure",
+        "Branch",
+        "Capistrano",
+        "Chef",
+        "Confluence",
+        "Cowboy Coding",
+        "DC/OS",
+        "Docker",
+        "Extreme Programming",
+        "Feature Driven Development",
+        "Google Apps",
+        "Google Cloud Platform (GCP)",
+        "Heroku",
+        "Jira",
+        "LaunchDarkly",
+        "Lean Development",
+        "Linux System Administration",
+        "Microsoft Office",
+        "MUX",
+        "Packer",
+        "Pair[ed] Programming",
+        "Peer Code Reviews",
+        "Puppet",
+        "Scrum",
+        "Segment",
+        "Sentry",
+        "Superset",
+        "Terraform",
+        "Twilio",
+        "Test Driven Development",
+        "User Stories",
+        "Vagrant",
+        "Windows System Administration",
+      ],
+    },
+  ];
 
   const jobs = [
     {
@@ -768,50 +884,14 @@ const ResumeContent = () => {
       <div className="subsection">
         <span className="subsection_heading bold">Technical Skills</span>
         <div className="extra_large_spacer">&nbsp;</div>
-        <span className="qualification_bucket bold">Languages / Technologies:</span>
-        <div className="small_spacer">&nbsp;</div>
-        <span className="qualifying_skills">
-          Angular / AngularJS, ASP.NET MVC, ASP / ASP.NET, C#, C, Celery, CSS, Django / DRF, Flask,
-          Gin, Go, HTML, Java, Javascript, Kafka, NestJS, Next.js, Node.js, PHP, Perl, Python /
-          Jython / IronPython, RabbitMQ, Rails, React, React Native, Ruby / JRuby / IronRuby,
-          Sinatra, Spark, Storm, TypeScript, VB / VB.NET
-        </span>
-        <div className="extra_large_spacer">&nbsp;</div>
-        <span className="qualification_bucket bold">Databases / NoSQL / Search:</span>
-        <div className="small_spacer">&nbsp;</div>
-        <span className="qualifying_skills">
-          Cassandra, Elasticsearch, HBase, Hive / Hadoop / HDFS, InfluxDB, MSSQL, Memcached, MySQL,
-          Oracle, PostgreSQL, Redis, Solr
-        </span>
-        <div className="extra_large_spacer">&nbsp;</div>
-        <span className="qualification_bucket bold">Operating Systems:</span>
-        <div className="small_spacer">&nbsp;</div>
-        <span className="qualifying_skills">Linux, OSX, Windows</span>
-        <div className="extra_large_spacer">&nbsp;</div>
-        <span className="qualification_bucket bold">Development Tools:</span>
-        <div className="small_spacer">&nbsp;</div>
-        <span className="qualifying_skills">
-          Eclipse, Microsoft InterDev / Visual Studio / Visual Studio Code, NetBeans, awk, grep, i3,
-          screen, sed, tmux, vim, xmonad
-        </span>
-        <div className="extra_large_spacer">&nbsp;</div>
-        <span className="qualification_bucket bold">Source Control:</span>
-        <div className="small_spacer">&nbsp;</div>
-        <span className="qualifying_skills">
-          CVS, Git / GitHub / GitLab / BitBucket, Microsoft Source Safe, Subversion
-        </span>
-        <div className="extra_large_spacer">&nbsp;</div>
-        <span className="qualification_bucket bold">Other:</span>
-        <div className="small_spacer">&nbsp;</div>
-        <span className="qualifying_skills">
-          Agile Development, Algolia, Amazon Web Services (AWS), Auth0, Azure, Branch, Capistrano,
-          Chef, Confluence, Cowboy Coding, DC/OS, Docker, Extreme Programming, Feature Driven
-          Development, Google Apps, Google Cloud Platform (GCP), Heroku, Jira, LaunchDarkly, Lean
-          Development, Linux System Administration, Microsoft Office, MUX, Packer, Pair[ed]
-          Programming, Peer Code Reviews, Puppet, Scrum, Segment, Sentry, Superset, Terraform,
-          Twilio, Test Driven Development, User Stories, Vagrant, Windows System Administration
-        </span>
-        <div className="extra_large_spacer">&nbsp;</div>
+        {skills.map((skill, index) => (
+          <div key={index} className="skill-category">
+            <span className="qualification_bucket bold">{skill.category}:</span>
+            <div className="small_spacer">&nbsp;</div>
+            <span className="qualifying_skills">{skill.items.join(", ")}</span>
+            <div className="extra_large_spacer">&nbsp;</div>
+          </div>
+        ))}
       </div>
 
       <hr />
@@ -821,9 +901,6 @@ const ResumeContent = () => {
         <div className="extra_large_spacer">&nbsp;</div>
 
         {jobs.map((job, index) => {
-          if (shouldHideJob(job.recent)) {
-            return null;
-          }
           return (
             <div key={index} className={`job ${job.recent ? "recent-js" : ""}`.trim()}>
               <span className="title bold">{job.title}</span>
@@ -846,15 +923,13 @@ const ResumeContent = () => {
           );
         })}
 
-        {isRecent && (
-          <div className="job-footer recent-js" style={{ display: "none" }}>
-            <div className="extra_large_spacer">&nbsp;</div>
-            <div className="paragraph italic">
-              Additional Professional Experience(s) provided upon request
-            </div>
-            <div className="extra_large_spacer">&nbsp;</div>
+        <div className="job-footer recent-js" style={{ display: "none" }}>
+          <div className="extra_large_spacer">&nbsp;</div>
+          <div className="paragraph italic">
+            Additional Professional Experience(s) provided upon request
           </div>
-        )}
+          <div className="extra_large_spacer">&nbsp;</div>
+        </div>
       </div>
 
       <hr />
