@@ -889,7 +889,6 @@ const ResumeContent = () => {
             <span className="qualification_bucket bold">{skill.category}:</span>
             <div className="small_spacer">&nbsp;</div>
             <span className="qualifying_skills">{skill.items.join(", ")}</span>
-            <div className="extra_large_spacer">&nbsp;</div>
           </div>
         ))}
       </div>
