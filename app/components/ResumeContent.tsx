@@ -1,12 +1,15 @@
 "use client";
 
-import React from "react";
+import React, { startTransition, useState, useEffect } from "react";
 
 const ResumeContent = () => {
-  const mode =
-    typeof document !== "undefined"
-      ? document.body.getAttribute("data-resume-mode") || "default"
-      : "default";
+  const [mode, setMode] = useState<string>("full");
+
+  useEffect(() => {
+    startTransition(() => {
+      setMode(document?.body?.getAttribute("data-resume-mode") || "full");
+    });
+  }, []);
 
   const isLite = mode === "lite";
   const isRecent = mode === "recent";
@@ -18,8 +21,16 @@ const ResumeContent = () => {
 
   const jobs = [
     {
+      title: "Vice President of Technical Architecture",
+      dates: "(09/25 - Current)",
+      company: "HappyFunCorp - New York, NY",
+      tagline: "A NYC-based Product Engineering Firm",
+      recent: true,
+      bullets: [],
+    },
+    {
       title: "Director of Technical Architecture",
-      dates: "(08/23 - Current)",
+      dates: "(08/23 - 09/25)",
       company: "HappyFunCorp - New York, NY",
       tagline: "A NYC-based Product Engineering Firm",
       recent: true,
@@ -814,22 +825,23 @@ const ResumeContent = () => {
             return null;
           }
           return (
-            <div key={index} className={`job ${job.recent ? "recent-js" : ""}`}>
+            <div key={index} className={`job ${job.recent ? "recent-js" : ""}`.trim()}>
               <span className="title bold">{job.title}</span>
               <span className="dates normal"> {job.dates}</span>
               <div className="tiny_spacer">&nbsp;</div>
               <span className="company normal">{job.company}</span>
               <div className="medium_spacer">&nbsp;</div>
               <div className="tagline paragraph">{job.tagline}</div>
-              {job.bullets.length > 0 && (
+              {job.bullets.length > 0 && !isLite && (
                 <>
                   <div className="extra_large_spacer">&nbsp;</div>
-                  <ul className={isLite ? "" : "full-js"}>
+                  <ul className="full-js">
                     {job.bullets.map((bullet, i) => renderBullet(bullet, i))}
                   </ul>
+                  <div className="extra_large_spacer">&nbsp;</div>
                 </>
               )}
-              <div className="extra_large_spacer">&nbsp;</div>
+              {job.bullets.length === 0 && <div className="extra_large_spacer">&nbsp;</div>}
             </div>
           );
         })}
