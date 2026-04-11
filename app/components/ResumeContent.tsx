@@ -137,8 +137,8 @@ const ResumeContent = () => {
 
   const jobs = [
     {
-      title: "Vice President of Technical Architecture",
-      dates: "(09/25 - Current)",
+      title: "Vice President of Technical Architecture & Head Of Labs",
+      dates: "(09/25 - 04/26)",
       company: "HappyFunCorp - New York, NY",
       tagline: "A NYC-based Product Engineering Firm",
       recent: true,
