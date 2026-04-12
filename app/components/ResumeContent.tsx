@@ -319,7 +319,7 @@ const ResumeContent = () => {
             "Speaking engagements on Future of Automation, AI in eCommerce, Why Human Element Remains Essential in Applied AI",
           ],
         },
-        "Established pattern for Labs operations later replicated at HappyFunCorp (2023-2026).",
+        "Established pattern for Labs operations later replicated at HappyFunCorp (2025-2026).",
       ],
     },
     {
