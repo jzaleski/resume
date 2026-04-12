@@ -1017,16 +1017,16 @@ const ResumeContent = () => {
             JonathanZaleski@gmail.com
           </a>{" "}
           -{" "}
+          <a className="github-link" href="https://www.github.com/jzaleski" target="_blank">
+            jzaleski (GitHub)
+          </a>{" "}
+          -{" "}
           <a
             className="linkedin-link"
             href="https://www.linkedin.com/in/jonathan-w-zaleski"
             target="_blank"
           >
             jonathan-w-zaleski (LinkedIn)
-          </a>{" "}
-          -{" "}
-          <a className="github-link" href="https://www.github.com/jzaleski" target="_blank">
-            jzaleski (GitHub)
           </a>
         </div>
         <div className="large_spacer">&nbsp;</div>
