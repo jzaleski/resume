@@ -1056,8 +1056,8 @@ const ResumeContent = () => {
         <div className="extra_large_spacer">&nbsp;</div>
         <div className="paragraph">
           Currently focused on local LLM deployment and multi-agent workflows - built ai-tools
-          repository for managing llama.cpp deployments with specialized agent roles (Architect,
-          Implement, Scribe) using Qwen3-Coder, Qwen3.5, and MiniMax models. Recently published
+          repository for managing llama.cpp (llama-server) deployments with specialized agent roles
+          (Architect, Implement, Scribe) using specialized models (Cipher, Sage). Recently published
           thought leadership on AI-assisted development in Techstrong.ai ("Build Fast, Then Build
           Right"), The AI Journal ("From Prototype to Production"), DEVOPSdigest (2026 Predictions),
           and InfoWorld (nonfunctional requirements for AI agents).
