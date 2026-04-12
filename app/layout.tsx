@@ -4,9 +4,9 @@ import { headers } from "next/headers";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Jonathan W. Zaleski - Resume",
+  title: "Jonathan Zaleski - Technical Leader & AI Architect",
   description:
-    "Highly skilled, versatile and reliable technical leader with a demonstrated history of working in the internet industry. Polyglot skilled in software development, scalability and agile methodologies. Dedicated leader and innovator who continuously strives for excellence. Bachelor of Arts (B.A.) focused in Computer Science, Environmental Science & Math from Westfield State University.",
+    "Technical leader specializing in AI/ML infrastructure, local LLM deployment, and multi-agent workflows. VP of Technical Architecture & Head Of Labs at HappyFunCorp, with expertise in building R&D divisions and prototype-to-production pipelines. Polyglot engineer across React/Next.js, Python/FastAPI, Go, and TypeScript/Node.js.",
 };
 
 const RootLayout = async ({ children }: { children: React.ReactNode }) => {
