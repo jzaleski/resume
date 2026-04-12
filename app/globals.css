@@ -20,6 +20,7 @@ body {
 
 .company,
 .dates,
+.external_link,
 .factoid,
 .factoid_section_label,
 .name,
@@ -73,6 +74,10 @@ body {
 .factoid {
   margin-left: 0em;
   margin-top: 0.4em;
+}
+
+.mono {
+  font-family: Courier;
 }
 
 ul {

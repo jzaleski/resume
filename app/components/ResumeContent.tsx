@@ -15,39 +15,39 @@ const ResumeContent = () => {
 
   const skills = [
     {
-      category: "Languages / Technologies",
+      category: "AI / ML Infrastructure",
       items: [
-        "Angular / AngularJS",
-        "ASP.NET MVC",
-        "ASP / ASP.NET",
-        "C#",
-        "C",
-        "Celery",
-        "CSS",
+        "Local LLM Deployment (llama.cpp, Ollama, LM Studio)",
+        "Multi-Agent Workflows (Opencode-AI, MCP, OpenClaw)",
+        "Commercial LLM APIs (OpenAI, Anthropic, Google)",
+        "Open-Source / Open-Weight Models (Hugging Face)",
+        "Open WebUI",
+        "Prompt Engineering & Agent Orchestration",
+        "RAG Systems",
+      ],
+    },
+    {
+      category: "Languages / Core Technologies",
+      items: [
+        // Current primary stack
+        "React / Next.js",
+        "TypeScript / Node.js",
+        "Python / FastAPI",
+        "Go / Gin",
+        // Strong secondary
+        "NestJS / Express",
         "Django / DRF",
         "Flask",
-        "Gin",
-        "Go",
-        "HTML",
+        "Ruby / Rails",
+        "C#",
         "Java",
-        "Javascript",
-        "Kafka",
-        "NestJS",
-        "Next.js",
-        "Node.js",
-        "PHP",
+        // Legacy breadth (de-emphasized but visible)
+        "ASP.NET MVC",
         "Perl",
-        "Python / Jython / IronPython",
-        "RabbitMQ",
-        "Rails",
-        "React",
-        "React Native",
-        "Ruby / JRuby / IronRuby",
-        "Sinatra",
-        "Spark",
-        "Storm",
-        "TypeScript",
         "VB / VB.NET",
+        "PHP",
+        "Angular / AngularJS",
+        "Javascript",
       ],
     },
     {
@@ -72,65 +72,72 @@ const ResumeContent = () => {
       items: ["Linux", "OSX", "Windows"],
     },
     {
-      category: "Development Tools",
+      category: "Development Tools & Workflow",
       items: [
+        // Keep prominent
+        "Git / GitHub / GitLab / BitBucket",
+        "Docker / Docker Compose",
+        "vim / tmux / i3 / xmonad",
+        // Legacy (de-emphasized)
         "Eclipse",
         "Microsoft InterDev / Visual Studio / Visual Studio Code",
         "NetBeans",
-        "awk",
-        "grep",
-        "i3",
-        "screen",
-        "sed",
-        "tmux",
-        "vim",
-        "xmonad",
+        "Subversion",
       ],
     },
     {
-      category: "Source Control",
-      items: ["CVS", "Git / GitHub / GitLab / BitBucket", "Microsoft Source Safe", "Subversion"],
+      category: "Cloud / DevOps / Infrastructure",
+      items: [
+        // New additions
+        "Local AI Infrastructure",
+        "Vercel",
+        "Kubernetes",
+        // Keep prominent
+        "Amazon Web Services (AWS)",
+        "Google Cloud Platform (GCP)",
+        "Azure",
+        "Terraform",
+        "Heroku",
+        // Existing
+        "Linux System Administration",
+        "Windows System Administration",
+        "Chef",
+        "Puppet",
+        "Packer",
+        "Vagrant",
+      ],
     },
     {
-      category: "Other",
+      category: "Methodologies & Practices",
       items: [
         "Agile Development",
-        "Algolia",
-        "Amazon Web Services (AWS)",
-        "Auth0",
-        "Azure",
-        "Branch",
-        "Capistrano",
-        "Chef",
-        "Confluence",
-        "Cowboy Coding",
-        "DC/OS",
-        "Docker",
-        "Extreme Programming",
-        "Feature Driven Development",
-        "Google Apps",
-        "Google Cloud Platform (GCP)",
-        "Heroku",
-        "Jira",
-        "LaunchDarkly",
-        "Lean Development",
-        "Linux System Administration",
-        "Microsoft Office",
-        "MUX",
-        "Packer",
+        "Scrum",
+        "Test Driven Development",
         "Pair[ed] Programming",
         "Peer Code Reviews",
-        "Puppet",
-        "Scrum",
+        "Lean Development",
+        "Feature Driven Development",
+        "Extreme Programming",
+        "User Stories",
+      ],
+    },
+    {
+      category: "Services / Platforms / Tools",
+      items: [
+        "Auth0",
+        "Clerk",
+        "LaunchDarkly",
+        "Algolia",
+        "MUX",
         "Segment",
+        "Twilio",
         "Sentry",
         "Superset",
-        "Terraform",
-        "Twilio",
-        "Test Driven Development",
-        "User Stories",
-        "Vagrant",
-        "Windows System Administration",
+        "Confluence",
+        "Jira",
+        "Branch.io",
+        "Capistrano",
+        "DC/OS",
       ],
     },
   ];
@@ -142,7 +149,55 @@ const ResumeContent = () => {
       company: "HappyFunCorp - New York, NY",
       tagline: "A NYC-based Product Engineering Firm",
       recent: true,
-      bullets: [],
+      bullets: [
+        "Promoted from Director to VP - expanded scope to include full R&D division while maintaining hands-on technical involvement in architecture and AI infrastructure. Continued pattern of building Labs operations following successful Applause Labs tenure (2019-2021).",
+        {
+          main: "Empowered Team Through Labs Model:",
+          subs: [
+            "Built HFC Labs operations from ground up - recruited/mentored engineers, defined R&D priorities with the advisory team, and created framework for prototype-to-production pipelines",
+            "Mentored staff engineers and engineering managers on architectural patterns while staying current with AI/ML technologies",
+            "Positioned Labs as both innovation engine and business development asset - aligned R&D with client engagement strategy",
+          ],
+        },
+        "Led HappyFunCorp's R&D division (HFC Labs) alongside VP of Technical Architecture responsibilities, focusing on rapid prototyping, AI-driven solutions, and production efficiency gains through innovative tooling.",
+        {
+          main: "Agentic Commerce POC:",
+          subs: [
+            "Developed chat/inference-based furniture shopping experience demonstrating agentic commerce capabilities",
+            "Built conversational AI interface for product discovery, recommendation, and guided purchasing flow",
+            "Validated prototype with internal stakeholders and potential clients, showcasing HFC's AI prototyping capabilities/partnership model",
+          ],
+        },
+        {
+          main: "HFC AI Offering Development:",
+          subs: [
+            "Architected and developed plan for HFC's AI service offering, defining go-to-market strategy and technical capabilities",
+            "Created framework for AI consulting services, prototype-to-production pipelines, and client engagement models",
+            "Aligned Labs R&D with business development to position HFC as leader in AI-driven product engineering",
+            `Balanced rapid prototyping ("vibe coding") with architectural discipline to avoid technical debt accumulation`,
+          ],
+        },
+        {
+          main: "AI Infrastructure & Local LLM Lab:",
+          subs: [
+            "Built local AI lab infrastructure running OpenCode, Open WebUI, OpenClaw after 1+ year of intensive Claude + Claude Code usage",
+            "Developed ai-tools repository for managing llama.cpp deployments with multi-model architecture",
+            "Implemented specialized agent roles (Architect/plan-only, Implement/full-tools, Scribe/docs) with opencode-ai framework",
+            "Achieved significant reductions in external API costs through strategic local model deployment and quantization optimization",
+          ],
+        },
+        {
+          main: "Thought Leadership & Industry Engagement:",
+          subs: [
+            "Published in Techstrong.ai on AI-assisted development realities and maintainability challenges",
+            "Contributed to The AI Journal on prototype-to-production transitions in AI-driven development",
+            "Commentary in DEVOPSdigest 2026 Predictions on velocity-to-veracity cultural shift",
+            "InfoWorld contribution on nonfunctional requirements for autonomous AI agents",
+          ],
+        },
+        "Transitioned from Director role after successful 3-year full-time tenure (11+ years total with HFC across contract and full-time engagements)",
+        "Assisted Sales team and closed multiple deals, leveraging technical expertise to land new clients and upsell pre-existing clients",
+      ],
     },
     {
       title: "Director of Technical Architecture",
@@ -150,15 +205,38 @@ const ResumeContent = () => {
       company: "HappyFunCorp - New York, NY",
       tagline: "A NYC-based Product Engineering Firm",
       recent: true,
-      bullets: [],
+      bullets: [
+        "Stayed hands-on while scaling leadership - owned technical architecture decisions across multiple client engagements while mentoring engineering managers and staff engineers.",
+        "Supported Sales efforts with technical deep-dives, proposal reviews, and client presentations to help close deals.",
+        "Led architecture review board and established technical standards for code quality, scalability, and security.",
+        "Mentored engineering managers and staff engineers on architectural patterns and system design.",
+        "Bridged gap between product requirements and technical implementation across distributed teams.",
+        {
+          main: "Early HFC Labs Initiatives:",
+          subs: [
+            "Pioneered AI-assisted development workflows that later evolved into formal HFC Labs R&D division",
+            "Established foundation for rapid prototyping capabilities using commercial generative AI solutions and local LLM infrastructure",
+          ],
+        },
+      ],
     },
     {
       title: "Staff Software Engineer [Contract]",
-      dates: "(06/23 - 8/23)",
+      dates: "(06/23 - 08/23)",
       company: "HappyFunCorp - New York, NY",
       tagline: "A NYC-based Product Engineering Firm",
       recent: true,
-      bullets: [],
+      bullets: [
+        "Returned to HappyFunCorp as contractor to address critical client needs before transitioning to full-time Director role.",
+        {
+          main: "High-Visibility Client Engagement:",
+          subs: [
+            "Led development of Claims Customer & Management portal for a major client under extremely tight timeline - critical deadline driven by Petition Date requirements",
+            "Worked closely with client stakeholders and leadership to deliver on an accelerated schedule with high visibility",
+            "Successfully delivered functionality meeting strict regulatory/administrative deadlines",
+          ],
+        },
+      ],
     },
     {
       title: "Vice President Of Engineering",
@@ -168,13 +246,20 @@ const ResumeContent = () => {
         "A social media app that brings conversation to life over video, audio, images and text.",
       recent: true,
       bullets: [
-        "Led both the Product and Engineering disciplines.",
+        "Led both the Product and Engineering disciplines - promoted from Director based on demonstrated impact.",
         <span key="ibble-launch">
           Launched the <span className="italic">ibble</span> mobile-application in both Mexico and
           Canada.
         </span>,
         "Worked with Marketing to launch an updated App-Store and Website presence.",
-        "Created multiple tools to automate or replace pre-existing manual processes, to aid in data-migrations / data-backfills and production flows.",
+        {
+          main: "Optimized People, Process, and Technology:",
+          subs: [
+            "Technology: Created multiple tools to automate manual processes, optimizing data-migrations, data-backfills, and production flows",
+            "Process: Established automated CI/CD pipelines and monitoring systems for improved reliability",
+            "People: Continued team scaling with focus on cross-functional collaboration between Product and Engineering",
+          ],
+        },
         "Continued focus on optimizing cost while maintaining or increasing stability and reliability of both the backend and frontend services / applications.",
       ],
     },
@@ -187,10 +272,14 @@ const ResumeContent = () => {
       recent: true,
       bullets: [
         "Analyzed, and documented, pre-existing infrastructure and software architecture to develop a plan to level things up, deprecate un-used / under-utilized services, reinforce critical components and optimize costs.",
-        "Led the re-platforming effort to migrate from Heroku to GCP.",
-        "Established onboarding documentation and tooling.",
-        "Established levels & responsiblities, team, Agile processes and SDLC.",
-        "Scaled the team with a mixture of contractors (near-shore / off-shore), interns and FTEs.",
+        {
+          main: "Optimized Across People, Process, and Technology:",
+          subs: [
+            "Technology: Led the re-platforming effort to migrate from Heroku to GCP, reducing infrastructure costs while improving scalability",
+            "Process: Established onboarding documentation, tooling, levels & responsibilities, team Agile processes and SDLC",
+            "People: Scaled team with mix of near-shore/off-shore contractors, interns, and FTEs - established clear career paths",
+          ],
+        },
       ],
     },
     {
@@ -200,11 +289,12 @@ const ResumeContent = () => {
       tagline: "Worldwide leader in crowdtesting and digital quality.",
       recent: true,
       bullets: [
+        "Built and led Applause Labs - the company's R&D division focused on rapid prototyping and innovation. Recruited and developed a team of engineers, empowering them to explore emerging technologies while delivering business-impacting IP.",
         {
-          main: "Built-out IP in and identified new and exciting capabilities that could enhance the business either directly or indirectly.",
+          main: "Built-out IP and identified new capabilities enhancing the business:",
           subs: [
             "Accessibility Recommender / Fixer",
-            "Automated Bug Triage / Test Case Generation from Bug Reports",
+            "Automated Bug Triage / Test Case Generation from Bug Reports - foundational work leading to US Patent 2024/0411670 A1 for 'SYSTEMS AND METHODS FOR AUTOMATING TEST AND VALIDITY' (co-inventors: Robert S. Mason, Leonardo Covarrubias)",
             "Crowd Services (GigE)",
             "Emotional AI",
             "Live / Just In Time Testing (JITT)",
@@ -212,10 +302,24 @@ const ResumeContent = () => {
             "[Applause] Quality Score (AQS)",
           ],
         },
-        "Investigated things that could influence quickly, discarding projects that did not pan out or deliver expected value (fail-fast).",
-        "Focused on rapid prototyping / rapid research to determining things like Complexity, Technical Feasibility, etc. and documenting results for validation / discussion with stake-holders (incl. the CEO).",
-        "Spoke at multiple conferences / conference panels to present / discuss The Future of Automation, AI in eCommerce, AI in Finance, Why the Human Element Remains Essential in Applied AI, amongst others.",
-        "Developed multiple press-releases published in DevopsDigest, Forbes, App Developer Magazine, amongst others.",
+        {
+          main: "Patent: US Patent 2024/0411670 A1 - Codeless Automation:",
+          subs: [
+            "Granted during HFC tenure (2024) but invented at Applause Labs (2019-2021)",
+            "Systems and methods for automating test and validity through codeless patterns",
+            "Early exploration of AI-assisted test generation, bug triage, and requirement validation",
+          ],
+        },
+        "Investigated emerging capabilities rapidly, discarding projects that did not deliver expected value (fail-fast methodology).",
+        "Focused on rapid prototyping / research to determine Complexity, Technical Feasibility, and documented results for validation with stakeholders including the CEO.",
+        {
+          main: "Key Publications & Press:",
+          subs: [
+            "Developed press releases published in DevopsDigest, Forbes, App Developer Magazine",
+            "Speaking engagements on Future of Automation, AI in eCommerce, Why Human Element Remains Essential in Applied AI",
+          ],
+        },
+        "Established pattern for Labs operations later replicated at HappyFunCorp (2023-2026).",
       ],
     },
     {
@@ -242,7 +346,9 @@ const ResumeContent = () => {
       company: "Applause - Framingham, MA",
       tagline: "Worldwide leader in crowdtesting and digital quality.",
       recent: true,
-      bullets: [],
+      bullets: [
+        "Promoted to Senior Director - expanded scope from leading one team to overseeing multiple engineering disciplines across the organization. Continued leadership while transitioning into Head of Applause Labs role.",
+      ],
     },
     {
       title: "Director Of Engineering",
@@ -251,6 +357,15 @@ const ResumeContent = () => {
       tagline: "Worldwide leader in crowdtesting and digital quality.",
       recent: true,
       bullets: [
+        "Promoted to Senior Director by end of tenure - expanded scope from leading one team to overseeing multiple engineering disciplines across the organization.",
+        {
+          main: "Empowered Team Members Through Process & Mentorship:",
+          subs: [
+            "Mentored engineers through career transitions - several promoted to staff/principal roles",
+            "Created standardized development processes that reduced ramp-up time for new hires",
+            "Established cross-functional collaboration between QA, Platform Delivery, and community QA teams",
+          ],
+        },
         "Partnered with product management and delivery teams to align and prioritize current and future new product development initiatives in support of business objectives.",
         "Worked with cross functional engineering teams including QA, Platform Delivery and community QA to plan and execute large scale application additions and improvements.",
         {
@@ -343,7 +458,7 @@ const ResumeContent = () => {
         "An American e-commerce company that sells furniture, home furnishings, luggage, toys, pet items and more.",
       recent: true,
       bullets: [
-        "Rapidly grew the Transportation engineering team from 10 engineers to approaching 50 engineers within a year.",
+        "Rapidly grew the Transportation engineering team from 10 engineers to approaching 50 engineers within a year - promoted twice during this tenure (Architect → Lead → Manager), demonstrating both technical depth and emerging leadership capabilities.",
         {
           subs: [
             "Coordinated onboarding for engineers both in Boston and our sister office in Berlin, Germany.",
@@ -410,6 +525,14 @@ const ResumeContent = () => {
               worked closely with business and engineering leadership to establish guidelines on how
               and when these types of meetings made sense.
             </span>,
+          ],
+        },
+        {
+          main: "Stayed Hands-On While Scaling:",
+          subs: [
+            "Continued coding and architecting alongside team growth - authored reusable components (Transportation Base Classes, Logging trait, Statistics trait) used across the organization",
+            "Maintained deep technical involvement in critical systems while developing leadership skills",
+            "Balanced people management responsibilities with hands-on design and code reviews",
           ],
         },
         "Involved with future planning / forecasting with regards to Architecture.",
@@ -616,7 +739,7 @@ const ResumeContent = () => {
     },
     {
       title: "Senior Software Engineer",
-      dates: " (04/06 - 02/07)",
+      dates: "(04/06 - 02/07)",
       company: "Pactolus Communications Software Corporation - Marlborough, MA",
       tagline:
         "Developing feature-rich, carrier-ready IP voice services for converged TDM/IP and VoIP (Voice over IP) networks.",
@@ -658,6 +781,51 @@ const ResumeContent = () => {
   ];
 
   const projects = [
+    {
+      name: "ai-tools",
+      dates: "(2025 - Current)",
+      desc: (
+        <span>
+          Local LLM infrastructure and utilities for running AI workloads with llama.cpp
+          (llama-server). Supports multi-model architecture, specialized agent roles (Architect,
+          Implement, Scribe), and both local/server modes. Features automated bootstrap system,
+          Docker Compose for Open WebUI, and optimized configurations for GPU-accelerated inference.
+        </span>
+      ),
+    },
+    {
+      name: "home-dir",
+      dates: "(2012 - Current)",
+      desc: (
+        <span>
+          Cross-platform dot-files and development utilities with bootstrap system supporting
+          CentOS/RedHat, Debian/Ubuntu, OSX, Cygwin & Git Bash. Includes Docker containerization for
+          consistent environments, Vim/Emacs configurations, shell customizations, and 900+ commits
+          of continuous refinement.
+        </span>
+      ),
+    },
+    {
+      name: "homebrew-jzaleski",
+      dates: "(2022 - Current)",
+      desc: (
+        <span>
+          Tap of Homebrew formulae maintained by @jzaleski. Provides curated package formulas for
+          development tools and utilities.
+        </span>
+      ),
+    },
+    {
+      name: "secrets",
+      dates: "(2025 - Current)",
+      desc: (
+        <span>
+          A simple CLI toolset for managing encrypted secrets using GPG. Includes tools for
+          initializing, encrypting, decrypting, and verifying secrets directories with automatic
+          version tracking.
+        </span>
+      ),
+    },
     {
       name: "splunk-otel-js-web",
       dates: "(2023 - Current)",
@@ -737,11 +905,6 @@ const ResumeContent = () => {
       desc: "An `i18n` wrapper gem intended to simplify and expedite internationalization.",
     },
     {
-      name: "resque-retry",
-      dates: "(2013 - Current)",
-      desc: "A resque (ruby) gem / plugin; that provides retry, delay and exponential backoff support for resque jobs.",
-    },
-    {
       name: "resque-concurrent-restriction",
       dates: "(2013 - Current)",
       desc: "A plugin for Resque that allows one to specify how many of the given job can run concurrently.",
@@ -750,11 +913,6 @@ const ResumeContent = () => {
       name: "TODO",
       dates: "(2012 - Current)",
       desc: "Web-Application & pseudo iPhone / Android Application for storing & retrieving TODOs.",
-    },
-    {
-      name: "home-dir",
-      dates: "(2012 - Current)",
-      desc: "Dot-files and basic utilities (compatible with: CentOS / Red Hat, Debian / Ubuntu, OSX, Cygwin & Git Bash).",
     },
     {
       name: "hijack (Multi-User-Dungeon Client)",
@@ -859,6 +1017,14 @@ const ResumeContent = () => {
             JonathanZaleski@gmail.com
           </a>{" "}
           -{" "}
+          <a
+            className="linkedin-link"
+            href="https://www.linkedin.com/in/jonathan-w-zaleski"
+            target="_blank"
+          >
+            jonathan-w-zaleski (LinkedIn)
+          </a>{" "}
+          -{" "}
           <a className="github-link" href="https://www.github.com/jzaleski" target="_blank">
             jzaleski (GitHub)
           </a>
@@ -870,11 +1036,38 @@ const ResumeContent = () => {
         <span className="subsection_heading bold">Summary</span>
         <div className="extra_large_spacer">&nbsp;</div>
         <div className="paragraph">
-          Highly skilled, versatile and reliable technical leader with a demonstrated history of
-          working in the internet industry. Polyglot skilled in software development, scalability
-          and agile methodologies. Dedicated leader and innovator who continuously strives for
-          excellence. Bachelor of Arts (B.A.) focused in Computer Science, Environmental Science &
-          Math from Westfield State University.
+          Technical innovation leader with 20+ years of experience building scalable systems and
+          leading engineering organizations - from hands-on architect to VP. Demonstrated ability to
+          stay current on the cutting edge (local LLM infrastructure, multi-agent workflows) while
+          scaling teams and empowering others. US Patent holder in codeless automation with a
+          consistent track record of optimizing outcomes across <span className="mono">people</span>{" "}
+          (mentorship, team development), <span className="mono">process</span> (SDLC, onboarding,
+          tooling), and <span className="mono">technology</span> (architecture, AI infrastructure,
+          cost optimization).
+        </div>
+        <div className="extra_large_spacer">&nbsp;</div>
+        <div className="paragraph">
+          Five+ years leading Labs/R&D divisions (Applause Labs 2019-2021, HappyFunCorp Labs
+          2025-2026), combining deep technical expertise with organizational leadership. Built Labs
+          operations from the ground up at two companies - defining strategy, recruiting talent, and
+          delivering IP that drove business impact. Active open-source maintainer - never lost my
+          passion for coding while building and mentoring teams.
+        </div>
+        <div className="extra_large_spacer">&nbsp;</div>
+        <div className="paragraph">
+          Currently focused on local LLM deployment and multi-agent workflows - built ai-tools
+          repository for managing llama.cpp deployments with specialized agent roles (Architect,
+          Implement, Scribe) using Qwen3-Coder, Qwen3.5, and MiniMax models. Recently published
+          thought leadership on AI-assisted development in Techstrong.ai ("Build Fast, Then Build
+          Right"), The AI Journal ("From Prototype to Production"), DEVOPSdigest (2026 Predictions),
+          and InfoWorld (nonfunctional requirements for AI agents).
+        </div>
+        <div className="extra_large_spacer">&nbsp;</div>
+        <div className="paragraph">
+          Deep expertise spanning full-stack development (React, Next.js, Python/FastAPI, Go),
+          distributed systems architecture, and engineering leadership at scale (Wayfair
+          Transportation: 50 engineers, Applause: multiple teams). B.A. in Computer Science,
+          Environmental Science & Math from Westfield State University.
         </div>
         <div className="large_spacer">&nbsp;</div>
       </div>
@@ -929,6 +1122,102 @@ const ResumeContent = () => {
           </div>
           <div className="extra_large_spacer">&nbsp;</div>
         </div>
+      </div>
+
+      <hr />
+
+      <div className="subsection">
+        <span className="subsection_heading bold">Patents</span>
+        <div className="extra_large_spacer">&nbsp;</div>
+        <div>
+          <div>
+            <span className="project bold">
+              US Patent 2024/0411670 A1: "SYSTEMS AND METHODS FOR AUTOMATING TEST AND VALIDITY"
+            </span>
+            <span className="dates normal"> - Issue Date: December 12, 2024</span>
+            <span className="external_link">
+              {" "}
+              <a
+                href="https://drive.google.com/file/d/1Y-kmUmt9G8U33PQXn2a1Qto3rP7KfXiA/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                [View Patent PDF]
+              </a>
+            </span>
+          </div>
+          <div className="extra_large_spacer">&nbsp;</div>
+          <div className="paragraph">
+            Codeless automation solution for automating test case generation and validity
+            verification. Patented approach enables non-technical users to create robust test
+            coverage through declarative specifications rather than imperative code. Co-inventors:
+            Robert S. Mason & Leonardo Covarrubias. Foundation for later AI-assisted automation work
+            at Applause Labs.
+          </div>
+        </div>
+        <div className="large_spacer">&nbsp;</div>
+      </div>
+
+      <hr />
+
+      <div className="subsection">
+        <span className="subsection_heading bold">Publications & Thought Leadership</span>
+        <div className="extra_large_spacer">&nbsp;</div>
+        <div>
+          <span className="project bold">
+            Build Fast, Then Build Right: Lessons From the Trenches of Vibe Coding
+          </span>
+          <span className="dates normal"> Techstrong.ai (2025)</span>
+          <div className="paragraph">
+            Exploring the realities of AI-assisted development and why maintainability matters more
+            than ever. Key insight: vibe coding's speed is undeniable, but architecting for AI so
+            outputs don't collapse under their own weight requires discipline, structure, and
+            engineering fundamentals.
+          </div>
+        </div>
+        <div className="large_spacer">&nbsp;</div>
+        <div>
+          <span className="project bold">
+            From Prototype to Production: How AI Is Transforming Software Development
+          </span>
+          <span className="dates normal"> The AI Journal (2025)</span>
+          <div className="paragraph">
+            Examining how AI is reshaping the journey from idea to implementation. Argues that speed
+            alone isn't enough without thoughtful architecture, real engineering discipline, and
+            human oversight. Framework for balancing rapid experimentation with production-grade
+            delivery.
+          </div>
+        </div>
+        <div className="large_spacer">&nbsp;</div>
+        <div>
+          <span className="project bold">
+            2026 Predictions: Development Culture Shift from Velocity to Veracity
+          </span>
+          <span className="dates normal"> DEVOPSdigest (2025)</span>
+          <div className="paragraph">
+            Commentary on the next wave of AI-driven autonomy requiring clearer intent, adaptive
+            architectures, responsibility, and composability at every layer. Predictions on how
+            development culture must evolve as AI systems become more autonomous.
+          </div>
+        </div>
+        <div className="large_spacer">&nbsp;</div>
+        <div>
+          <span className="project bold">
+            How to Write Nonfunctional Requirements for AI Agents
+          </span>
+          <span className="dates normal"> InfoWorld (2025)</span>
+          <div className="paragraph">
+            Addressing new complexity around reliability, transparency, and control in AI-driven
+            systems. Framework for defining standards around safety, explainability, and
+            auditability thoughtfully and practically as agents become more capable.
+          </div>
+        </div>
+        <div className="large_spacer">&nbsp;</div>
+        <div className="paragraph italic">
+          Additional speaking engagements on AI in eCommerce, The Future of Automation, and
+          Engineering Leadership at Applause, HappyFunCorp, and industry conferences (2019-2026).
+        </div>
+        <div className="extra_large_spacer">&nbsp;</div>
       </div>
 
       <hr />
