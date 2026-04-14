@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
+import { Analytics } from "@vercel/analytics/next";
 
 import "./globals.css";
 
@@ -16,7 +17,10 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
 
   return (
     <html lang="en">
-      <body data-resume-mode={mode}>{children}</body>
+      <body data-resume-mode={mode}>
+        {children}
+        {process.env.NEXT_PUBLIC_VERCEL_ANALYTICS_ENABLED === "true" ? <Analytics /> : null}
+      </body>
     </html>
   );
 };
