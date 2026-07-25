@@ -949,10 +949,7 @@ const ResumeContent = () => {
   type BulletSub = string | React.ReactNode;
 
   type BulletItem =
-    | string
-    | React.ReactNode
-    | { main?: string; subs?: BulletSub[] }
-    | { subs?: BulletSub[] };
+    string | React.ReactNode | { main?: string; subs?: BulletSub[] } | { subs?: BulletSub[] };
 
   const renderBullet = (bullet: BulletItem, index: number) => {
     if (typeof bullet === "string") {
